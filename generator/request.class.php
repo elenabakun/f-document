@@ -1,4 +1,8 @@
 <?
+
+// Copyright © 2015 Elena Bakun Contacts: <floppox@gmail.com>
+// License: http://opensource.org/licenses/MIT
+
 class Request {
 	
 	public $template;
