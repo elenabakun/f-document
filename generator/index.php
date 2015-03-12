@@ -1,5 +1,8 @@
 <?
 
+// Copyright © 2015 Elena Bakun Contacts: <floppox@gmail.com>
+// License: http://opensource.org/licenses/MIT
+
 function __autoload($classname) {
     include_once("./".strtolower($classname) .".class.php");
 }
