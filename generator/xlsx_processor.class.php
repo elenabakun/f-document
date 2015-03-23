@@ -143,8 +143,6 @@ class xlsx_processor {
 	private function clone_group($sheet, $row, $count){
 		$prev_row = $row_to_clone = $this->find_row($sheet->xml->sheetData,($row));
 		$header_to_clone = $this->find_row($sheet->xml->sheetData,($row-1));
-		$row_to_clone->addAttribute('fl','r-orig');
-		$header_to_clone->addAttribute('fl','h-orig');
 
 		for ($i=0; $i<$count; $i++){
 			$h_clone = $sheet->xml->sheetData->addChild('row');
@@ -166,9 +164,6 @@ class xlsx_processor {
 			
 			$this->clone_row_cells($header_to_clone,$h_clone,$row_index-1,$row_index+1+$i*2);
 			$this->clone_row_cells($row_to_clone,$r_clone,$row_index,$row_index+2+$i*2);
-
-			$r_clone->attributes()->fl='r'.$i;
-			$h_clone->attributes()->fl='h'.$i;
 
 			$this->simplexml_insert_after($r_clone, $prev_row);
 			$this->simplexml_insert_after($h_clone, $prev_row);
